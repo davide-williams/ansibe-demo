@@ -4,7 +4,7 @@
     path: "{{ install_dir }}/ace-{{ ace_version }}"
     state: directory
     mode: '0755'  # Optional: Set permissions for the directory
-  #become: yes  # Optional: Use this if you need elevated privileges
+  become: yes  # Optional: Use this if you need elevated privileges
   
 - name: Copy ACE version files
   copy:
