@@ -1,4 +1,11 @@
 ---
+- name: Create a directory if it does not exist
+  ansible.builtin.file:
+    path: "{{ install_dir }}/ace-{{ ace_version }}"
+    state: directory
+    mode: '0755'  # Optional: Set permissions for the directory
+  #become: yes  # Optional: Use this if you need elevated privileges
+  
 - name: Copy ACE version files
   copy:
     src: "{{ ace_files }}/{{ ace_version }}/ace-{{ ace_version }}"
